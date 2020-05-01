@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  baseUrl = 'https://localhost:44399/api/auth';
+  baseUrl = 'https://localhost:44399/api/auth/';
 
   constructor(private http: HttpClient) {}
 
@@ -21,5 +20,9 @@ export class AuthService {
         }
       })
     );
+  }
+
+  register(model: any) {
+    return this.http.post(this.baseUrl + 'register', model);
   }
 }
