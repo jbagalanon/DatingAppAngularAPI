@@ -1,6 +1,5 @@
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
-// import { AppRoutingModule } from './app-routing.module';AppRoutingModule,
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
