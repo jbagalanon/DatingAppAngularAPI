@@ -11,7 +11,7 @@ export class NavComponent implements OnInit {
   model: any = {};
 
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private alertify: AlertifyService
   ) {}
 
@@ -34,7 +34,7 @@ export class NavComponent implements OnInit {
     // return !!token;
   }
 
-  loggedOut() {
+  logout() {
     localStorage.removeItem('token');
     this.alertify.message('logged out');
   }
