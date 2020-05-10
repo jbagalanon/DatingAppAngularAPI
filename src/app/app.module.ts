@@ -1,3 +1,4 @@
+import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
