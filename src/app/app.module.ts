@@ -10,6 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, HomeComponent, RegisterComponent],
@@ -17,6 +18,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
   ],
   providers: [AuthService, ErrorInterceptorProvider],
