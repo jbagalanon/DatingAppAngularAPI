@@ -33,7 +33,7 @@ import { MessagesComponent } from './messages/messages.component';
     FormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
-    RouterModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [AuthService, ErrorInterceptorProvider],
   bootstrap: [AppComponent],
