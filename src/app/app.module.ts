@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AuthService } from './_services/auth.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
@@ -19,6 +20,9 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +41,16 @@ import { MemberCardComponent } from './members/member-card/member-card.component
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    JwtModule.forRoot({
+      config: {
+        // supposedly this is tokengetter:tokengetter
+        tokenGetter,
+        whitelistedDomains: ['localhost:5000'],
+        blacklistedRoutes: ['localhost:5000/api/auth'],
+      },
+    }),
   ],
+
   providers: [AuthService, ErrorInterceptorProvider],
   bootstrap: [AppComponent],
 })
