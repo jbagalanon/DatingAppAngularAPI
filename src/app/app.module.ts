@@ -1,3 +1,5 @@
+import { AuthGuard } from './_guards/auth.guard';
+import { AlertifyService } from './_services/alertify.service';
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +22,8 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
-
+import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { from } from 'rxjs';
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -41,6 +44,7 @@ export function tokenGetter() {
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     JwtModule.forRoot({
@@ -53,7 +57,14 @@ export function tokenGetter() {
     }),
   ],
 
-  providers: [AuthService, ErrorInterceptorProvider],
+  providers: [
+    AuthService,
+    ErrorInterceptorProvider,
+    ErrorInterceptorProvider,
+    AlertifyService,
+    AuthGuard,
+    MemberDetailResolver,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
