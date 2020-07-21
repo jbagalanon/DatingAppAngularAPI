@@ -24,6 +24,7 @@ export class MemberDetailComponent implements OnInit {
       this.user = data['user'];
     });
   }
+
   // // this.userService.getUser(this.route.snapshot.params['id']) supposedly this the code
   // loadUser() {
   //   this.userService.getUser(+this.route.snapshot.params.id).subscribe(
