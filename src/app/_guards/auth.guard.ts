@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
     }
 
     this.alertify.error(
-      'You must be authenticated user before you can access this informatio'
+      'You must be authenticated user before you can access this information'
     );
 
     this.router.navigate(['/home']);

@@ -3,7 +3,6 @@ import { UserService } from './../../_services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../../_models/user';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-member-detail',
