@@ -40,7 +40,6 @@ export function tokenGetter() {
     MessagesComponent,
     MemberCardComponent,
     MemberDetailComponent,
-    MemberListResolver,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +66,7 @@ export function tokenGetter() {
     AlertifyService,
     AuthGuard,
     MemberDetailResolver,
+    MemberListResolver,
   ],
   bootstrap: [AppComponent],
 })
