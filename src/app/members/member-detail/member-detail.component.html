@@ -52,7 +52,10 @@
           </tab>
 
           <tab heading="Photos">
-            <p>Photos will be save here</p>
+            <ngx-gallery
+              [options]="galleryOptions"
+              [images]="galleryImages"
+            ></ngx-gallery>
           </tab>
 
           <tab heading="Messages">
