@@ -5,10 +5,10 @@
     </div>
 
     <div class="col-sm-8">
-      <div class="alert alert-info">
+      <div *ngIf="editForm.dirty" class="alert alert-info">
         <p>
-          <strong>Information</strong>You have made changes. Any unsaved changes
-          will be lost.
+          <strong>Information:</strong> You have made changes. Any unsaved
+          changes will be lost.
         </p>
       </div>
     </div>
@@ -44,18 +44,22 @@
         </div>
 
         <div class="card-footer">
-          <div class="btn-group d-flex">
-            <button class="btn btn-primary w-100">Like</button>
-            <button class="btn btn-success w-100">Message</button>
-          </div>
+          <button
+            [disabled]="!editForm.dirty"
+            form="editForm"
+            class="btn btn-success btn-block"
+          >
+            Save Changes
+          </button>
         </div>
       </div>
     </div>
+
     <div class="col-sm-8">
       <div class="tab-panel">
         <tabset>
           <tab heading="Edit profile">
-            <form>
+            <form #editForm="ngForm" (ngSubmit)="updateUser()">
               <h4>Description</h4>
               <textarea
                 name="introduction"
