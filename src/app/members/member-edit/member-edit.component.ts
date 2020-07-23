@@ -12,6 +12,7 @@ import { AuthService } from '../../_services/auth.service';
   styleUrls: ['./member-edit.component.css'],
 })
 export class MemberEditComponent implements OnInit {
+  @ViewChild('editForm') editForm: NgForm;
   user: User;
 
   constructor(
@@ -28,5 +29,6 @@ export class MemberEditComponent implements OnInit {
   updateUser() {
     console.log(this.user);
     this.alertify.success('Profile updated successfully');
+    this.editForm.reset(this.user);
   }
 }

@@ -59,7 +59,7 @@
       <div class="tab-panel">
         <tabset>
           <tab heading="Edit profile">
-            <form #editForm="ngForm" (ngSubmit)="updateUser()">
+            <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()">
               <h4>Description</h4>
               <textarea
                 name="introduction"
