@@ -1,3 +1,4 @@
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { AuthGuard } from './_guards/auth.guard';
 import { AlertifyService } from './_services/alertify.service';
 import { appRoutes } from './routes';
@@ -74,6 +75,7 @@ export function tokenGetter() {
     MemberDetailResolver,
     MemberListResolver,
     MemberEditResolver,
+    PreventUnsavedChanges,
   ],
   bootstrap: [AppComponent],
 })
