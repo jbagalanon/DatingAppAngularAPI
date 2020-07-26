@@ -1,5 +1,3 @@
-import { AuthService } from './../../_services/auth.service';
-import { UserService } from './../../_services/user.service';
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { User } from '../../_models/user';
 import { ActivatedRoute } from '@angular/router';
